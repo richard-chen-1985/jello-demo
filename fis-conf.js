@@ -19,6 +19,16 @@ fis.hook('amd', {
   ]
 });
 
+fis.match('components/jquery/jquery.js', {
+  id: 'jquery'
+}).match('components/bootstrap/js/bootstrap.js', {
+  id: 'bootstrap'
+}).match('components/jquery-validation/jquery.validate.js', {
+  id: 'jqueryValidation'
+}).match('components/jquery-validation/localization/messages_zh.js', {
+  id: 'jqueryValidationZh'
+})
+
 // 设置 *.scss 配置配置项
 fis.match('*.scss', {
   rExt: '.css',
@@ -51,7 +61,7 @@ fis.media('prod')
         '/widget/**.scss'
       ],
       'pkg/boot.js': [
-        'static/js/require.js', 
+        'static/js/require.js',
         'components/jquery/jquery.js',
         'components/bootstrap/bootstrap.js',
         'components/bootstrap/bootstrap.js:deps' // 匹配依赖部分
@@ -60,5 +70,12 @@ fis.media('prod')
         'page/examples/form.js',
         'page/examples/form.js:deps'
       ]
+    })
+  })
+
+fis.media('local')
+  .match('*', {
+    deploy: fis.plugin('local-deliver', {
+      to: 'D:\\StudySpace\\springMVC\\src\\main\\webapp'
     })
   })

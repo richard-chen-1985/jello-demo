@@ -9,6 +9,7 @@
 
 #extends($layout)
 
+#filter('static/js/require.js')#end
 
 #block("content")
 <form id="nodeForm" role="form" method="POST" action="$action">
@@ -34,8 +35,6 @@
 
     <button type="submit" class="btn btn-primary">提交</button>
 </form>
-#end## end of body
-
 
 #script()
 /* fis async 用 `fis async` 告诉编译器，这个 require 以异步方式加载，而不是当程序入口*/
@@ -45,5 +44,8 @@ require(['../form'], function(app) {
     });
 });
 #end##endscript
+
+#end## end of body
+
 
 #end

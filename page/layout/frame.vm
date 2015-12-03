@@ -28,7 +28,9 @@
     #end## end of body
 
     #script()
-    // 启用 bootstrap
-    require(['bootstrap']);
+    require(['jquery'], function() {
+        // 启用 bootstrap
+        require(['bootstrap']);
+    });
     #end
 #end## end of html

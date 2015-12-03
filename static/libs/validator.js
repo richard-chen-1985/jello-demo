@@ -1,7 +1,7 @@
 var $ = require('jquery');
-var validator = module.exports = require('jquery-validation');
+var validator = module.exports = require('jqueryValidation');
 
-require('jquery-validation/localization/messages_zh');
+require('jqueryValidationZh');
 
 $.validator.setDefaults({
     ignore: 'input[type=hidden]:not(.form-item)',
