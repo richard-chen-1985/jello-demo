@@ -1,5 +1,5 @@
 #if ($menus)
-
+    #require('./sidebarmenus.scss')
     ## velocity 宏示例
     #macro( renderMenus $menus)
         <ul class="nav" role="menu">
